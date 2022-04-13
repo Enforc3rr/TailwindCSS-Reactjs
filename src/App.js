@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  return <div className="flex flex-col sm:flex-row"></div>;
 }
 
-export default App;
+/*
+bg-sky-600 sm:bg-yellow-400 md:bg-red-400 : it means that below 640px color will be sky blue , from sm to md  color will be yellow and above md color will be red
+      <button class="bg-sky-600 sm:bg-yellow-400 md:bg-red-400">
+        Save changes
+      </button>
+Flex box       
+      <div className="flex flex-col sm:flex-row">
+        <div className="sm:h-50 h-96 sm:flex-1 bg-red-800 "></div> // flex-grow (it will take max space)
+        <div className="sm:h-50 h-96 sm:flex-1 bg-green-800 "></div>
+        <div className="sm:h-50 h-96 sm:flex-1 bg-blue-800 "></div>
+    </div>
+*/
