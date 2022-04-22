@@ -1,0 +1,21 @@
+.mainContainer {
+  background-image: radial-gradient(
+    circle at center,
+    #040030,
+    #07002a,
+    #080024,
+    #07001f,
+    #060019,
+    #040013,
+    #02000b,
+    #000000
+  );
+}
+
+.inputBox {
+  border: 2px solid #003979;
+}
+.inputBox:focus {
+  outline: none !important;
+  border: 2px solid brown;
+}
