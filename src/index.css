@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mainContainer {
+  background-image: radial-gradient(
+    circle at center,
+    #040030,
+    #07002a,
+    #080024,
+    #07001f,
+    #060019,
+    #040013,
+    #02000b,
+    #000000
+  );
+}
+
+.subscribeButton {
+  border: 2px solid #003979;
+  color: white;
+}
