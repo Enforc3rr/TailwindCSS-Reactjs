@@ -71,22 +71,24 @@ function NewsLetterPopup() {
   };
   const onClickFunc = () => {
     setWaitingForResponse(true);
-    axios
-      .post(
-        `${process.env.REACT_APP_CURRENT_URL}/api/v1/newsLetter/addUser?userEmail=${email}`
-      )
-      .then((response) => {
-        console.log(response);
-        setDisplayingResponseMessage(!displayingResponseMessage);
-        setResponseMessage(response.data.message);
-        setWaitingForResponse(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setDisplayingResponseMessage(!displayingResponseMessage);
-        setResponseMessage(error.response.data.message);
-        setWaitingForResponse(false);
-      });
+    if (isEmailValid) {
+      axios
+        .post(
+          `${process.env.REACT_APP_CURRENT_URL}/api/v1/newsLetter/addUser?userEmail=${email}`
+        )
+        .then((response) => {
+          console.log(response);
+          setDisplayingResponseMessage(!displayingResponseMessage);
+          setResponseMessage(response.data.message);
+          setWaitingForResponse(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          setDisplayingResponseMessage(!displayingResponseMessage);
+          setResponseMessage(error.response.data.message);
+          setWaitingForResponse(false);
+        });
+    }
   };
 
   return (
@@ -110,6 +112,7 @@ function NewsLetterPopup() {
                 <span className="m-3 flex flex-col items-center justify-center overflow-hidden sm:m-7 sm:flex-row">
                   <input
                     placeholder="Your Email"
+                    onKeyDown={onClickFunc}
                     type="email"
                     value={email}
                     onChange={(e) => onEmailChangeFunction(e.target.value)}
