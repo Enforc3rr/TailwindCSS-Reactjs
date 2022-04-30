@@ -1,10 +1,11 @@
+import ComponentOne from "./Components/ComponentOne";
 import NewsLetterPopup from "./Components/NewsLetterPopup";
 
 export default function App() {
   const arr = [1, 2, 3, 4];
   return (
     <>
-      <NewsLetterPopup />
+      <ComponentOne />
     </>
   );
 }
